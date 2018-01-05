@@ -20,6 +20,10 @@ $ch =  curl_init('https://poloniex.com/public?command=returnTicker');
 $poloniex = curl_exec($ch);
 $polo = json_decode($poloniex,true);
 
+foreach( $bit as $k => $v ){
+    $bitnew[ $bit[$k]['MarketName'] ][0] = $bit[$k]['Bid'];
+    $bitnew[ $bit[$k]['MarketName'] ][1] = $bit[$k]['Ask'];
+}
 foreach( $polo as $k => $v ){
     if( substr($k,0,3) === 'BTC' ){
         $alt = str_replace("_","-",$k);
