@@ -27,12 +27,14 @@ foreach( $bit as $k => $v ){
 foreach( $polo as $k => $v ){
     if( substr($k,0,3) === 'BTC' ){
         $alt = str_replace("_","-",$k);
-        echo 'Buy@Bittrex Sell@Polo<br>';
+        
         if( $polo[$k]['highestBid'] > $bitnew[$alt][1] && $bitnew[$alt][1]>0 ){
+            echo '<br>Buy@Bittrex Sell@Polo<br>';
             echo $alt.' '.($polo[$k]['highestBid']-$bitnew[$alt][1])/$bitnew[$alt][1].'<br>';
             }
-        echo '<br>Buy@Polo Sell@Bittrex<br>';
+        
         if( $polo[$k]['lowestAsk'] < $bitnew[$alt][0] && $polo[$k]['highestBid']>0 ){
+            echo '<br>Buy@Polo Sell@Bittrex<br>';
             echo $alt.' '.(-$polo[$k]['lowestAsk']+$bitnew[$alt][0])/$polo[$k]['lowestAsk'].'<br>';
             }
     }
