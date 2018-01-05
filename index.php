@@ -27,7 +27,7 @@ foreach( $bit as $k => $v ){
 foreach( $polo as $k => $v ){
     if( substr($k,0,3) === 'BTC' ){
         $alt = str_replace("_","-",$k);
-        if( $polo[$k]['highestBid'] > $bitnew[$alt][1] ){
+        if( $polo[$k]['highestBid'] > $bitnew[$alt][1] && isset($bitnew[$alt][1]) ){
             echo $alt.' '.($polo[$k]['highestBid']-$bitnew[$alt][1])/$bitnew[$alt][1].'<br>';
             }
     }
