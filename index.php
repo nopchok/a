@@ -28,7 +28,7 @@ foreach( $polo as $k => $v ){
     if( substr($k,0,3) === 'BTC' ){
         $alt = str_replace("_","-",$k);
         if( $polo[$k]['highestBid'] > $bitnew[$alt][1] ){
-            echo $alt;
+            echo $alt.'<br>';
             }
     }
 }
