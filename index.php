@@ -7,6 +7,9 @@ $ch =  curl_init('https://poloniex.com/public?command=returnTicker');
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
     curl_setopt($ch, CURLOPT_TIMEOUT, 3);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
-$result = curl_exec($ch);
+$poloniex = curl_exec($ch);
 
-print_r($result);
+$ch =  curl_init('https://bittrex.com/api/v1.1/public/getmarketsummaries');
+$bittrex = curl_exec($ch);
+
+print_r($bittrex);
