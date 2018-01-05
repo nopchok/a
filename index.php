@@ -37,7 +37,7 @@ foreach( $polo as $k => $v ){
             }
         
         if( $polo[$k]['lowestAsk'] < $bitnew[$alt][0] && $polo[$k]['highestBid']>0 ){
-            (-$polo[$k]['lowestAsk']+$bitnew[$alt][0])/$polo[$k]['lowestAsk']
+            $check = (-$polo[$k]['lowestAsk']+$bitnew[$alt][0])/$polo[$k]['lowestAsk'];
             if( $check >= 0.03 ){
             echo '<br>Buy@Polo Sell@Bittrex<br>';
             echo $alt.' '.$check.'<br>';
