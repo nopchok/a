@@ -1,6 +1,5 @@
 <?php
-echo 'sss';
-exit;
+
 $ch =  curl_init('https://bittrex.com/api/v1.1/public/getmarketsummaries');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
